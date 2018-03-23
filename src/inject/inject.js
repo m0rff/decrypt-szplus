@@ -12,8 +12,8 @@ chrome.extension.sendMessage({}, function(response) {
         $.ajax({
           url: ampUrl
         }).done(function(data) {
-          document.write(data);
-        }).error(function(error) {
+          document.write(data)
+        }).error(function() {
           console.log('Replacing not possible! :(')
         })
       }

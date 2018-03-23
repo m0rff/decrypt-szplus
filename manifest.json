@@ -1,6 +1,6 @@
 {
   "name": "Decrypt SZPlus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Replace SZPlus articles with their AMP version",
   "permissions": [
@@ -13,7 +13,7 @@
         "http://www.sueddeutsche.de/*"
       ],
       "js": [
-        "js/jquery/jquery.js",
+        "js/jquery/jquery.min.js",
         "src/inject/inject.js"
       ]
     }
