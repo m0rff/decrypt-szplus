@@ -5,12 +5,14 @@
   "description": "Replace SZPlus articles with their AMP version",
   "permissions": [
     "contentSettings",
-    "http://www.sueddeutsche.de/"
+    "http://www.sueddeutsche.de/",
+    "https://www.sueddeutsche.de/"
   ],
   "content_scripts": [
     {
       "matches": [
-        "http://www.sueddeutsche.de/*"
+        "http://www.sueddeutsche.de/*",
+        "https://www.sueddeutsche.de/*"
       ],
       "js": [
         "js/jquery/jquery.min.js",
