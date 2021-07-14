@@ -15,7 +15,6 @@
         "https://www.sueddeutsche.de/*"
       ],
       "js": [
-        "js/jquery/jquery.min.js",
         "src/inject/inject.js"
       ]
     }

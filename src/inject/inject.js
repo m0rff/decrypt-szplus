@@ -1,5 +1,5 @@
-chrome.extension.sendMessage({}, function(response) {
-  var readyStateCheckInterval = setInterval(function() {
+chrome.extension.sendMessage({}, function (response) {
+  var readyStateCheckInterval = setInterval(function () {
     if (document.readyState === 'complete') {
       clearInterval(readyStateCheckInterval)
       var url = window.location.href
@@ -9,13 +9,13 @@ chrome.extension.sendMessage({}, function(response) {
       if (locationSubstring === reducedString) {
         var ampUrl = url.substr(0, url.length - reducedString.length) + '!amp'
 
-        $.ajax({
-          url: ampUrl
-        }).done(function(data) {
-          document.write(data)
-        }).error(function() {
-          console.log('Replacing not possible! :(')
-        })
+        fetch(ampUrl)
+          .then(response => response.text())
+          .then(body => document.write(body))
+          .catch(error => {
+            console.log('Replacing not possible! :(')
+            console.error('Error:', error)
+          });
       }
     }
   }, 10)
